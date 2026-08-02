@@ -1,0 +1,295 @@
+/* ==========================
+   Gallery Premium V2
+========================== */
+
+.gallery{
+
+    position:relative;
+
+    padding:140px 8%;
+
+    background:transparent;
+
+    overflow:hidden;
+
+}
+
+.gallery::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:750px;
+
+    height:750px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(125,60,255,.12),
+        transparent 70%);
+
+    top:-350px;
+
+    left:-260px;
+
+    filter:blur(30px);
+
+}
+
+.gallery::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(255,185,225,.14),
+        transparent 70%);
+
+    right:-200px;
+
+    bottom:-250px;
+
+    filter:blur(25px);
+
+}
+
+.gallery h2{
+
+    position:relative;
+
+    z-index:3;
+
+    text-align:center;
+
+    font-size:56px;
+
+    color:#222;
+
+    margin-bottom:80px;
+
+}
+
+/* ==========================
+   Masonry
+========================== */
+
+.gallery-container{
+
+    position:relative;
+
+    z-index:3;
+
+    column-count:4;
+
+    column-gap:28px;
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.gallery-item{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:100%;
+
+    margin-bottom:28px;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    break-inside:avoid;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    transition:.45s;
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.10);
+
+}
+
+.gallery-item:hover{
+
+    transform:
+
+        translateY(-16px)
+
+        scale(1.03);
+
+    box-shadow:
+
+        0 35px 90px rgba(125,60,255,.18);
+
+}
+
+/* ==========================
+   Image
+========================== */
+
+.gallery-item img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.8s;
+
+    filter:
+
+        brightness(.96)
+
+        contrast(1.05);
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.12);
+
+    filter:
+
+        brightness(1.03)
+
+        contrast(1.08);
+
+}
+
+/* ==========================
+   Overlay
+========================== */
+
+.gallery-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        180deg,
+
+        rgba(255,255,255,0),
+
+        rgba(0,0,0,.18)
+
+    );
+
+    opacity:0;
+
+    transition:.45s;
+
+    z-index:2;
+
+}
+
+.gallery-item:hover::before{
+
+    opacity:1;
+
+}
+
+/* ==========================
+   Shine
+========================== */
+
+.gallery-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-130%;
+
+    left:-60%;
+
+    width:40%;
+
+    height:320%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    z-index:3;
+
+}
+
+.gallery-item:hover::after{
+
+    left:150%;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:1200px){
+
+.gallery-container{
+
+column-count:3;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.gallery{
+
+padding:100px 20px;
+
+}
+
+.gallery h2{
+
+font-size:42px;
+
+}
+
+.gallery-container{
+
+column-count:2;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.gallery-container{
+
+column-count:1;
+
+}
+
+}

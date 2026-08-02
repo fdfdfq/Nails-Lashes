@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Админка Nails-Lashes
+</title>
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+    padding:30px;
+
+    font-family:Arial,sans-serif;
+
+    background:#f5f5f5;
+
+}
+
+
+.header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+h1{
+
+    font-size:36px;
+
+}
+
+
+.logout{
+
+    background:#222;
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+
+
+.info,
+.management,
+.stat,
+.column{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:20px;
+
+}
+
+
+
+.info{
+
+    margin-top:25px;
+
+}
+
+
+
+.stats{
+
+    display:flex;
+
+    gap:20px;
+
+    margin:25px 0;
+
+}
+
+
+
+.stat{
+
+    box-shadow:0 3px 10px #ddd;
+
+}
+
+
+
+.board{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.column{
+
+    min-height:450px;
+
+}
+
+
+
+.title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+.dot{
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+}
+
+
+
+.yellow{
+    background:#ffd34d;
+}
+
+
+.green{
+    background:#4ddf8a;
+}
+
+
+.blue{
+    background:#4d8cff;
+}
+
+
+.red{
+    background:#ff5268;
+}
+
+
+
+.card{
+
+    margin-top:20px;
+
+    background:#fafafa;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    box-shadow:0 2px 8px #ddd;
+
+}
+
+
+
+button{
+
+    border:none;
+
+    padding:8px 12px;
+
+    margin:3px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+
+
+input,
+select{
+
+    width:100%;
+
+    padding:10px;
+
+    margin:5px 0;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+}
+
+
+
+.management{
+
+    margin:30px 0;
+
+}
+
+
+
+.block{
+
+    margin-bottom:30px;
+
+}
+
+
+
+.list-item{
+
+    background:#fafafa;
+
+    padding:12px;
+
+    margin-top:10px;
+
+    border-radius:10px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="header">
+
+
+<h1>
+Админка Nails-Lashes
+</h1>
+
+
+<button class="logout" onclick="logout()">
+Выйти
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="info">
+
+<h3 id="adminName">
+Загрузка...
+</h3>
+
+
+<p id="adminRole"></p>
+
+</div>
+
+
+
+
+
+<!-- ========================= -->
+<!-- Управление -->
+<!-- ========================= -->
+
+
+<div class="management" id="management">
+
+
+<h2>
+Управление
+</h2>
+
+
+
+<div class="block">
+
+
+<h3>
+Мастера
+</h3>
+
+
+<div id="mastersList"></div>
+
+
+
+<h4>
+Добавить мастера
+</h4>
+
+
+<input id="masterName" placeholder="Имя">
+
+
+<input id="masterProfession" placeholder="Профессия">
+
+
+<input id="masterPhone" placeholder="Телефон">
+
+
+<input id="masterTelegram" placeholder="Telegram">
+
+
+<input id="masterCity" placeholder="Город">
+
+
+
+<button onclick="addMaster()">
+Добавить мастера
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="block">
+
+
+<h3>
+Услуги
+</h3>
+
+
+
+<div id="servicesList"></div>
+
+
+
+<h4>
+Добавить услугу
+</h4>
+
+
+
+<select id="serviceMaster"></select>
+
+
+<input id="serviceName" placeholder="Название услуги">
+
+
+<input id="servicePrice" placeholder="Цена">
+
+
+<input id="serviceDuration" placeholder="Длительность">
+
+
+<button onclick="addService()">
+Добавить услугу
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+Новые:
+
+<b id="newCount">
+0
+</b>
+
+
+</div>
+
+
+<div class="stat">
+
+Подтверждены:
+
+<b id="confirmedCount">
+0
+</b>
+
+
+</div>
+
+
+<div class="stat">
+
+Выполнены:
+
+<b id="completedCount">
+0
+</b>
+
+
+</div>
+
+
+<div class="stat">
+
+Отменены:
+
+<b id="cancelledCount">
+0
+</b>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="board">
+
+
+
+<div class="column">
+
+<h2 class="title">
+
+<span class="dot yellow"></span>
+
+Новые
+
+</h2>
+
+
+<div id="new"></div>
+
+
+</div>
+
+
+
+
+
+<div class="column">
+
+<h2 class="title">
+
+<span class="dot green"></span>
+
+Подтверждены
+
+</h2>
+
+
+<div id="confirmed"></div>
+
+
+</div>
+
+
+
+
+
+<div class="column">
+
+<h2 class="title">
+
+<span class="dot blue"></span>
+
+Выполнены
+
+</h2>
+
+
+<div id="completed"></div>
+
+
+</div>
+
+
+
+
+
+<div class="column">
+
+<h2 class="title">
+
+<span class="dot red"></span>
+
+Отменены
+
+</h2>
+
+
+<div id="cancelled"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+const adminData = localStorage.getItem("admin");
+
+
+if(!adminData){
+
+    window.location.href="login.html";
+
+}
+
+
+
+function logout(){
+
+    localStorage.removeItem("admin");
+
+    window.location.href="login.html";
+
+}
+
+
+</script>
+
+
+
+<script src="./js/admin.js"></script>
+
+
+</body>
+
+</html>

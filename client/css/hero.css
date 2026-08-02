@@ -1,0 +1,1001 @@
+/*==================================================
+  HERO
+  Premium Beauty 2026
+==================================================*/
+
+:root{
+
+    --primary:#8b5cf6;
+    --secondary:#b784ff;
+
+    --text:#171717;
+    --gray:#707070;
+
+    --white:#ffffff;
+
+    --glass:rgba(255,255,255,.42);
+
+    --shadow:
+        0 35px 80px rgba(0,0,0,.10);
+
+}
+
+.hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff8fc 100%
+    );
+
+    padding:
+
+        170px
+        0
+        120px;
+
+}
+
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:850px;
+    height:850px;
+
+    top:-340px;
+    right:-320px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(179,133,255,.22),
+
+        transparent 72%
+
+    );
+
+    filter:blur(90px);
+
+    animation:
+
+    heroGlowOne
+
+    15s
+
+    ease-in-out
+
+    infinite;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:720px;
+    height:720px;
+
+    left:-220px;
+    bottom:-240px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,182,216,.18),
+
+        transparent 72%
+
+    );
+
+    filter:blur(85px);
+
+    animation:
+
+    heroGlowTwo
+
+    14s
+
+    ease-in-out
+
+    infinite;
+
+}
+
+/*====================================*/
+
+.hero-container{
+
+    width:min(1280px,100%);
+
+    padding:0 60px;
+
+    box-sizing:border-box;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+        1fr
+        1fr;
+
+    align-items:center;
+
+    gap:80px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/*====================================*/
+
+.hero-left{
+
+    max-width:560px;
+
+}
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+        15px
+        30px;
+
+    border-radius:999px;
+
+    background:
+
+    rgba(255,255,255,.55);
+
+    backdrop-filter:blur(25px);
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.85);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:var(--primary);
+
+    box-shadow:
+
+    0 20px 45px
+    rgba(0,0,0,.05);
+
+    margin-bottom:30px;
+
+}
+
+.hero-left h1{
+
+    font-size:84px;
+
+    line-height:88px;
+
+    font-weight:800;
+
+    letter-spacing:-3px;
+
+    color:var(--text);
+
+    margin-bottom:30px;
+
+}
+
+.hero-left p{
+
+    font-size:21px;
+
+    line-height:39px;
+
+    color:var(--gray);
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+/*==================================================
+  BUTTONS
+==================================================*/
+
+.hero-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:62px;
+
+    padding:0 38px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    box-shadow:
+        0 18px 40px rgba(139,92,246,.35);
+
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 28px 60px rgba(139,92,246,.45);
+
+}
+
+.hero-btn-outline{
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(18px);
+
+    color:var(--text);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(0,0,0,.05);
+
+}
+
+.hero-btn-outline:hover{
+
+    background:#fff;
+
+}
+
+/*==================================================
+  RIGHT
+==================================================*/
+
+.hero-right{
+
+    position:relative;
+
+    overflow:visible;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:720px;
+
+}
+/*==================================================
+  AMBIENT LIGHT
+==================================================*/
+
+.ambient{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:10;
+    opacity:.8;
+    filter:blur(20px);
+}
+
+.ambient1{
+    width:220px;
+    height:220px;
+    background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.18),
+    rgba(255,255,255,.02)
+);
+
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter: blur(3px);
+    top:120px;
+    left:120px;
+}
+
+.ambient2{
+    width:220px;
+    height:220px;
+    background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.14),
+    rgba(255,255,255,0)
+);
+
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter: blur(2px);
+    right:80px;
+    bottom:80px;
+}
+/*==================================================
+  IMAGE
+==================================================*/
+
+.hero-blob{
+
+    position:relative;
+
+    width:500px;
+
+    height:650px;
+
+    overflow:hidden;
+
+    border-radius:45% 55% 48% 52% /
+                   38% 42% 58% 62%;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(30px);
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.8);
+
+    box-shadow:
+
+        0 45px 90px rgba(0,0,0,.12),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.9);
+
+    animation:
+
+        heroFloat
+
+        8s
+
+        ease-in-out
+
+        infinite;
+
+    z-index:5;
+
+}
+
+.hero-blob img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/*==================================================
+  GLOW
+==================================================*/
+
+.hero-glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+}
+
+.glow-one{
+
+    width:280px;
+
+    height:280px;
+
+    top:50px;
+
+    left:20px;
+
+    background:
+
+        rgba(185,140,255,.35);
+
+}
+
+.glow-two{
+
+    width:240px;
+
+    height:240px;
+
+    right:30px;
+
+    bottom:40px;
+
+    background:
+
+        rgba(255,190,220,.30);
+
+}
+
+/*==================================================
+  SHAPES
+==================================================*/
+
+.hero-shape{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    backdrop-filter:blur(20px);
+
+    background:
+
+        rgba(255,255,255,.35);
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.7);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,.06);
+
+}
+/*==================================================
+  SHAPES
+==================================================*/
+
+.shape-1{
+
+    width:140px;
+    height:140px;
+
+    top:20px;
+    left:20px;
+
+    animation:floatShapeOne 10s ease-in-out infinite;
+
+}
+
+.shape-2{
+
+    width:90px;
+    height:90px;
+
+    top:140px;
+    right:40px;
+
+    animation:floatShapeTwo 9s ease-in-out infinite;
+
+}
+
+.shape-3{
+
+    width:120px;
+    height:120px;
+
+    bottom:60px;
+    left:40px;
+
+    animation:floatShapeThree 11s ease-in-out infinite;
+
+}
+
+.shape-4{
+
+    width:70px;
+    height:70px;
+
+    right:60px;
+    bottom:170px;
+
+    animation:floatShapeFour 8s ease-in-out infinite;
+
+}
+
+/*==================================================
+  GLASS LINES
+==================================================*/
+
+.shape-line{
+
+    position:absolute;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.05);
+
+}
+
+.line-1{
+
+    width:170px;
+
+    height:12px;
+
+    top:90px;
+
+    left:-40px;
+
+    transform:rotate(-32deg);
+
+}
+
+.line-2{
+
+    width:190px;
+
+    height:12px;
+
+    right:-45px;
+
+    bottom:110px;
+
+    transform:rotate(32deg);
+
+}
+
+/*==================================================
+  ANIMATIONS
+==================================================*/
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-18px)
+            rotate(1deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+}
+
+@keyframes heroGlowOne{
+
+    0%{
+
+        transform:
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.15);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+@keyframes heroGlowTwo{
+
+    0%{
+
+        transform:
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            scale(.9);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+@keyframes floatShapeOne{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-20px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes floatShapeTwo{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(18px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes floatShapeThree{
+
+    0%{
+
+        transform:
+            translateX(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateX(18px);
+
+    }
+
+    100%{
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+@keyframes floatShapeFour{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-14px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+/*==================================================
+  GLASS PARTICLES
+==================================================*/
+
+.hero-particle{
+    position:absolute;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#ffd5ff,               #ff8bd8 45%,#9b5cff 100%);
+    opacity:.8;
+    filter:blur(.3px);
+    box-shadow:
+    0 0 10px rgba(255,120,220,.25),
+    0 0 20px rgba(155,92,255,.15);
+    animation:particleFloat 8s ease-in-out infinite;
+    z-index:6;
+}
+
+.hero-particle::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:rgba(255,255,255,.45);
+    transform:scale(.45);
+}
+
+.p1{
+    width:18px;
+    height:18px;
+    top:12%;
+    left:8%;
+}
+
+.p2{
+    width:12px;
+    height:12px;
+    top:22%;
+    right:16%;
+    animation-delay:1s;
+}
+
+.p3{
+    width:24px;
+    height:24px;
+    bottom:18%;
+    right:5%;
+    animation-delay:2s;
+}
+
+.p4{
+    width:14px;
+    height:14px;
+    bottom:8%;
+    left:15%;
+    animation-delay:3s;
+}
+
+.p5{
+    width:10px;
+    height:10px;
+    top:55%;
+    left:48%;
+    animation-delay:4s;
+}
+
+.p6{
+    width:16px;
+    height:16px;
+    top:72%;
+    right:28%;
+    animation-delay:2.5s;
+}
+
+@keyframes particleFloat{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+    50%{
+        transform:translateY(-18px) scale(1.18);
+    }
+}
+/*==============================
+    PREMIUM DECOR
+==============================*/
+
+.hero-orb{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(12px);
+    opacity:.45;
+    animation:orbFloat 14s ease-in-out infinite;
+    z-index:1;
+}
+
+.orb-1{
+    width:170px;
+    height:170px;
+    top:8%;
+    right:5%;
+    background:radial-gradient(circle,#ffd5ff,#d98bff,#8b5cf6);
+}
+
+.orb-2{
+    width:120px;
+    height:120px;
+    bottom:8%;
+    left:10%;
+    background:radial-gradient(circle,#ffffff,#f5c9ff,#c084fc);
+    animation-delay:3s;
+}
+
+.orb-3{
+    width:90px;
+    height:90px;
+    top:55%;
+    right:30%;
+    background:radial-gradient(circle,#ffc8ef,#b56dff,#7c3aed);
+    animation-delay:6s;
+}
+
+.hero-stars{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:7;
+}
+
+.hero-stars span{
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ff9be8;
+    box-shadow:
+        0 0 10px #ff9be8,
+        0 0 22px rgba(186,104,255,.7);
+    animation:starFloat 8s ease-in-out infinite;
+}
+@keyframes glassFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-35deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(-35deg);
+    }
+}
+
+@keyframes glassFloat2{
+    0%,100%{
+        transform:translateY(0) rotate(25deg);
+    }
+
+    50%{
+        transform:translateY(12px) rotate(25deg);
+    }
+}
+.ambient,
+.hero-glow,
+.glass-reflection{
+    display:none !important;
+}
+/*==========================================
+  SPARKS
+==========================================*/
+
+.spark{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:
+        0 0 8px rgba(255,255,255,.9),
+        0 0 16px rgba(255,170,240,.6);
+
+    animation:sparkBlink 4s ease-in-out infinite;
+    z-index:5;
+}
+
+.s1{top:10%;left:15%;animation-delay:0s;}
+.s2{top:18%;right:22%;animation-delay:.8s;}
+.s3{top:42%;left:8%;animation-delay:1.5s;}
+.s4{top:65%;right:10%;animation-delay:2.4s;}
+.s5{bottom:18%;left:22%;animation-delay:3s;}
+.s6{bottom:8%;right:28%;animation-delay:1.8s;}
+.s7{top:32%;right:42%;animation-delay:2.8s;}
+.s8{bottom:38%;left:45%;animation-delay:.5s;}
+
+@keyframes sparkBlink{
+
+    0%,100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+
+}

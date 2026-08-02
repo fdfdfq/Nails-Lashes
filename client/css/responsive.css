@@ -1,0 +1,31 @@
+@media(max-width:1100px){
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        width:100%;
+
+    }
+
+    .hero-image{
+
+        width:100%;
+
+        margin-top:60px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

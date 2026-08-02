@@ -1,0 +1,1097 @@
+
+/* ==========================
+   Services Premium V2
+========================== */
+
+.services{
+
+    position:relative;
+
+    padding:140px 80px;
+
+    background:linear-gradient(
+    180deg,
+    #fff8fc 0%,
+    #ffffff 100%
+);
+
+    overflow:hidden;
+
+}
+
+.services::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(125,60,255,.22),
+    transparent 72%);
+
+    top:-350px;
+
+    left:-250px;
+
+    filter:blur(25px);
+
+}
+
+.services::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    border-radius:50%;
+
+  background:radial-gradient(circle,
+    rgba(255,170,220,.24),
+    transparent 72%);
+
+    right:-180px;
+
+    bottom:-250px;
+
+    filter:blur(20px);
+
+}
+
+.services h2{
+
+    position:relative;
+
+    display:inline-block;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:22px 48px;
+
+    margin-bottom:35px;
+
+    font-size:58px;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
+    color:#222;
+
+    line-height:1.1;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.58);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.65);
+
+    box-shadow:
+        0 18px 45px rgba(165,120,255,.08);
+
+    z-index:3;
+
+}
+.services h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-18px;
+
+    transform:translateX(-50%);
+
+    width:90px;
+
+    height:4px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        #ff9ddc,
+        #9b5cff
+    );
+
+    box-shadow:
+        0 0 18px rgba(155,92,255,.35);
+
+}
+.services-decoration{
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#b56cff;
+
+    filter:blur(1px);
+
+    opacity:.22;
+
+}
+/* ==========================
+   Grid
+========================== */
+
+.services-container{
+
+    position:relative;
+
+    z-index:3;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:45px;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.service-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    padding:45px;
+
+   background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.92),
+    rgba(255,255,255,.72)
+);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    transition:.45s;
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #7d3cff,
+
+        #b67dff
+
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.45s;
+
+}
+
+.service-card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.015);
+
+    box-shadow:
+
+        0 35px 90px rgba(125,60,255,.22);
+
+}
+
+.service-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================
+   Title
+========================== */
+
+.service-card h3{
+
+    font-size:30px;
+
+    color:#222;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================
+   Text
+========================== */
+
+.service-card p{
+
+    font-size:18px;
+
+    line-height:31px;
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================
+   Price
+========================== */
+
+.service-card span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 30px;
+
+    border-radius:60px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #7d3cff,
+
+        #b67dff
+
+    );
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    box-shadow:
+
+        0 15px 35px rgba(125,60,255,.30);
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:900px){
+
+.services{
+
+padding:100px 20px;
+
+}
+
+.services h2{
+
+font-size:42px;
+
+margin-bottom:60px;
+
+}
+
+.services-container{
+
+grid-template-columns:1fr;
+
+gap:30px;
+
+}
+
+.service-card{
+
+padding:35px;
+
+}
+
+}
+.service-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:35px;
+
+    background:
+    radial-gradient(
+        circle at top right,
+        rgba(183,108,255,.12),
+        transparent 45%
+    );
+
+    opacity:0;
+
+    transition:.45s;
+
+    pointer-events:none;
+
+}
+
+.service-card:hover::after{
+
+    opacity:1;
+
+}
+/*==================================================
+  PREMIUM SERVICES HEADER
+==================================================*/
+
+.services-header{
+
+    max-width:900px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+.services-header h2{
+
+    font-size:64px;
+
+    font-weight:800;
+
+    line-height:1.08;
+
+    letter-spacing:-2px;
+
+    color:#242424;
+
+    margin-bottom:26px;
+
+}
+
+.services-accent{
+
+    width:90px;
+
+    height:6px;
+
+    margin:0 auto 28px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        #ff9fd5,
+        #b56cff
+    );
+
+    box-shadow:
+        0 0 30px rgba(181,108,255,.35);
+
+}
+
+.services-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:36px;
+
+}
+
+.services-divider::before,
+.services-divider::after{
+
+    content:"";
+
+    width:140px;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(181,108,255,.45),
+        transparent
+    );
+
+}
+
+.services-divider span{
+
+    width:54px;
+
+    height:54px;
+
+    margin:0 20px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    border:1px solid rgba(255,255,255,.9);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+        0 15px 40px rgba(181,108,255,.18);
+
+}
+
+.services-divider span::before{
+
+    content:"✦";
+
+    font-size:24px;
+
+    color:#b56cff;
+
+}
+
+.services-description{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    max-width:760px;
+
+    margin:auto;
+
+    padding:22px 28px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:24px;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 20px 45px rgba(170,120,255,.10);
+
+}
+
+.services-description-icon{
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    background:linear-gradient(
+        135deg,
+        #ffd8ef,
+        #f4ecff
+    );
+
+    color:#b56cff;
+
+    flex-shrink:0;
+
+}
+/* ========================================= */
+/* SERVICE DETAILS */
+/* ========================================= */
+
+.service-icon{
+
+    width:78px;
+    height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:26px;
+
+    border-radius:22px;
+
+    background:linear-gradient(135deg,#ffe4f4,#f2ebff);
+
+    color:#9b63ff;
+
+    font-size:34px;
+
+    box-shadow:0 15px 35px rgba(155,99,255,.18);
+
+    transition:.35s;
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:
+        rotate(8deg)
+        scale(1.15);
+
+}
+
+.service-line{
+
+    width:48px;
+    height:4px;
+
+    margin:18px 0 24px;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg,#ff98d9,#965bff);
+
+    transition:.35s;
+
+}
+
+.service-card:hover .service-line{
+
+    width:72px;
+
+}
+
+.service-text{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    margin-bottom:34px;
+
+}
+
+.service-price{
+
+    font-size:40px;
+
+    font-weight:800;
+
+    color:#8d52ff;
+
+    margin-bottom:28px;
+
+    transition:.35s;
+
+}
+
+.service-card:hover .service-price{
+
+    color:#7d3cff;
+
+    transform:scale(1.05);
+
+}
+
+.service-time{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 34px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(135deg,#7d43ff,#b46cff);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 15px 35px rgba(125,67,255,.28);
+
+    transition:.35s;
+
+}
+
+.service-card:hover .service-time{
+
+    transform:
+        translateY(-2px)
+        scale(1.05);
+
+    box-shadow:
+        0 15px 35px rgba(125,67,255,.35);
+
+}
+
+.service-time:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 22px 45px rgba(125,67,255,.38);
+
+}
+
+.services-description p{
+
+    margin:0;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    text-align:left;
+
+}
+
+.services-description span{
+
+    color:#b56cff;
+
+    font-weight:700;
+
+}
+/* ==========================
+   Scroll Reveal
+========================== */
+
+.service-card{
+
+    opacity:0;
+    
+    will-change: transform, opacity;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+.service-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ==========================
+   Background Decoration
+========================== */
+
+.services{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.services-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+.services-blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.12;
+
+    background:
+    linear-gradient(
+        180deg,
+        #a46cff,
+        #7d3cff
+    );
+
+}
+
+/* левый шар */
+
+.blob-left{
+
+    width:420px;
+
+    height:420px;
+
+    top:-180px;
+
+    left:-180px;
+
+}
+
+/* правый */
+
+.blob-right{
+
+    width:320px;
+
+    height:320px;
+
+    right:-120px;
+
+    bottom:-120px;
+
+}
+/* ==========================
+   Glass Circles
+========================== */
+
+.glass-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:3px solid rgba(181,108,255,.45);
+
+    background:rgba(181,108,255,.10);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 0 40px rgba(181,108,255,.18);
+
+}
+
+.circle-1{
+
+    width:380px;
+
+    height:380px;
+
+    top:80px;
+
+    left:-170px;
+
+}
+
+.circle-2{
+
+    width:280px;
+
+    height:280px;
+
+    right:-120px;
+
+    bottom:80px;
+
+}
+/* ==========================
+   Floating Details
+========================== */
+
+.floating-dot{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:#b56cff;
+
+    opacity:.7;
+
+    box-shadow:
+        0 0 18px rgba(181,108,255,.7);
+
+    animation:floatDot 12s ease-in-out infinite;
+
+}
+
+.dot-1{
+
+    width:14px;
+
+    height:14px;
+
+    left:8%;
+
+    top:24%;
+
+}
+
+.dot-2{
+
+    width:10px;
+
+    height:10px;
+
+    right:12%;
+
+    top:42%;
+
+}
+
+.dot-3{
+
+    width:18px;
+
+    height:18px;
+
+    left:22%;
+
+    bottom:12%;
+
+}
+
+.floating-star{
+
+    position:absolute;
+
+    color:#b56cff;
+
+    opacity:.75;
+
+    font-size:26px;
+
+    text-shadow:
+        0 0 15px rgba(181,108,255,.55);
+
+    animation:floatStar 10s ease-in-out infinite;
+
+}
+
+.star-1{
+
+    right:8%;
+
+    top:18%;
+
+}
+
+.star-2{
+
+    left:14%;
+
+    bottom:20%;
+
+}
+
+@keyframes floatDot{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-14px);
+
+    }
+
+}
+
+@keyframes floatStar{
+
+    0%,100%{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px) rotate(12deg);
+
+    }
+
+}
+/* ==========================
+   Purple Aura
+========================== */
+
+.services-glow{
+
+    position:absolute;
+
+    width:900px;
+
+    height:500px;
+
+    left:50%;
+
+    top:55%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(181,108,255,.18),
+        rgba(181,108,255,.08),
+        transparent 75%
+    );
+
+    filter:blur(90px);
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+/* ==========================
+   Vertical Lines
+========================== */
+
+.services-line{
+
+    position:absolute;
+
+    width:2px;
+
+    height:340px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(181,108,255,.25),
+        transparent
+    );
+
+    opacity:.7;
+
+}
+
+.line-left{
+
+    left:31%;
+
+    top:190px;
+
+}
+
+.line-right{
+
+    right:31%;
+
+    top:260px;
+
+}
+.big-dot{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:2px solid rgba(181,108,255,.28);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 0 35px rgba(181,108,255,.18);
+
+}
+
+.big-1{
+
+    width:70px;
+
+    height:70px;
+
+    left:12%;
+
+    top:58%;
+
+}
+
+.big-2{
+
+    width:45px;
+
+    height:45px;
+
+    right:14%;
+
+    top:72%;
+
+}

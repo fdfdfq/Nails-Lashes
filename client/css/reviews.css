@@ -1,0 +1,315 @@
+/* ==========================
+   Reviews Premium V2
+========================== */
+
+.reviews{
+
+    position:relative;
+
+    padding:140px 8%;
+
+    background:transparent;
+
+    overflow:hidden;
+
+}
+
+.reviews::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(125,60,255,.10),
+        transparent 70%);
+
+    top:-320px;
+
+    right:-220px;
+
+    filter:blur(25px);
+
+}
+
+.reviews::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(255,185,225,.13),
+        transparent 70%);
+
+    left:-220px;
+
+    bottom:-260px;
+
+    filter:blur(25px);
+
+}
+
+.reviews h2{
+
+    position:relative;
+
+    z-index:3;
+
+    text-align:center;
+
+    font-size:56px;
+
+    margin-bottom:80px;
+
+    color:#222;
+
+}
+
+/* ==========================
+   Track
+========================== */
+
+.reviews-container{
+
+    position:relative;
+
+    z-index:3;
+
+    display:flex;
+
+    overflow:hidden;
+
+    width:100%;
+
+}
+
+.reviews-track{
+
+    display:flex;
+
+    gap:35px;
+
+    animation:reviewsMove 18s linear infinite;
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.review-card{
+
+    min-width:340px;
+
+    flex-shrink:0;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:38px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    transition:.45s;
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-15px);
+
+    box-shadow:
+
+        0 35px 90px rgba(125,60,255,.18);
+
+}
+
+.review-card::before{
+
+    content:"❝";
+
+    position:absolute;
+
+    left:22px;
+
+    top:8px;
+
+    font-size:90px;
+
+    color:#efe2ff;
+
+}
+
+.review-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+        90deg,
+        #7d3cff,
+        #b67dff
+    );
+
+}
+
+/* ==========================
+   Avatar
+========================== */
+
+.review-avatar{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    margin-bottom:22px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:4px solid #fff;
+
+    box-shadow:
+
+        0 12px 30px rgba(125,60,255,.25);
+
+}
+
+.review-avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ==========================
+   Text
+========================== */
+
+.review-card h3{
+
+    text-align:center;
+
+    font-size:25px;
+
+    margin-bottom:12px;
+
+    color:#222;
+
+}
+
+.review-stars{
+
+    text-align:center;
+
+    font-size:21px;
+
+    margin-bottom:18px;
+
+}
+
+.review-card p{
+
+    text-align:center;
+
+    font-size:17px;
+
+    line-height:31px;
+
+    color:#666;
+
+}
+
+/* ==========================
+   Animation
+========================== */
+
+@keyframes reviewsMove{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    50%{
+
+        transform:translateX(-220px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:900px){
+
+.reviews{
+
+padding:100px 20px;
+
+}
+
+.reviews h2{
+
+font-size:42px;
+
+}
+
+.review-card{
+
+min-width:300px;
+
+}
+
+}
